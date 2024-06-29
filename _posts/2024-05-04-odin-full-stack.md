@@ -2,7 +2,7 @@
 title: My experience with The Odin Project Full Stack JavaScript path 
 categories : [Learning Journey]
 tags :  [the-odin-project]
-description: creme332 shares his experience with the full stack JavaScript web development course by The Odin Project, offering insightful statistics and reflections.
+description: My experience experience with the full stack JavaScript web development course by The Odin Project.
 comments: true
 mermaid: true
 media_subpath: /assets/odin-full-stack/

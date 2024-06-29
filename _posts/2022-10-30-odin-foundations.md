@@ -2,7 +2,7 @@
 title: My experience with The Odin Project foundations course
 categories : [Learning Journey]
 tags :  [the-odin-project]
-description: creme332 shares his experience with the web development foundations course by The Odin Project, offering insightful statistics and reflections.
+description: My experience with the web development foundations course by The Odin Project.
 comments: true
 mermaid: true
 ---
