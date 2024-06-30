@@ -3,8 +3,8 @@
 - type: github
   icon: "fab fa-github"
 
-- type: twitter
-  icon: "fa-brands fa-x-twitter"
+# - type: twitter
+#   icon: "fa-brands fa-x-twitter"
 
 - type: email
   icon: "fas fa-envelope"
@@ -23,6 +23,11 @@
 #   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
 #   url:  ''                  # Fill with your Linkedin homepage
 #
+
+- type: personal-website
+  icon: 'fas fa-globe'
+  url:  'https://creme332.vercel.app/'
+
 # - type: stack-overflow
 #   icon: 'fab fa-stack-overflow'
-#   url:  ''                  # Fill with your stackoverflow homepage
+#   url:  'https://stackoverflow.com/users/17627866/creme332'                  # Fill with your stackoverflow homepage
