@@ -22,26 +22,27 @@ The challenge is to transform the starting string `MI` into a target string such
 In this blog post, we will explore the MIU puzzle and discuss its implementation in programming. 
 
 ## A decidable criterion for derivability
+
 >An arbitrarily given string $x$ can be derived from `MI` by the above four rules if, and only if, $x$ respects the **all** three of the following properties:
 >
 >1. $x$ is only composed with one `M` and any number of `I` and `U`
 >2. $x$ begins with `M`
 >3. the number of `I` in $x$ is **not** divisible by 3
 >
-> Source: [Wikipedia](https://en.wikipedia.org/wiki/MU_puzzle#A_decidable_criterion_for_derivability)
+> (Wikipedia contributors, 2023)
 
-For example the string `MIIIIU` is derivable (apply Rule 2 twice and Rule 1 once) but `MIIIIII` and `MU` are not.
+For example, the string `MIIIIU` is derivable (apply Rule 2 twice and Rule 1 once) but `MIIIIII` and `MU` are not.
 
 ### Implementation of a theorem checker in Prolog
 
 > A theorem in a formal system is a valid string that can be formed from the axioms and inference rules. For example `MIIII` is a theorem in the `MIU` system but `MIT` is not.
-{: .prompt-tip }
+> {: .prompt-tip }
 
 Based on the criterion for derivability, we can implement a Prolog program to check the derivability of a string.
 
-To be able to do this, we first need to write facts/rules for the following:
+To be able to do this, we first need to write a few facts/rules:
 
-- count the number of occurrences of an element in a list:
+1. To count the number of occurrences of an element in a list:
   ```prolog
 count(_, [], 0).
 count(M, [M |TAIL], N) :- count(M, TAIL, N1), N is N1 + 1.
@@ -52,11 +53,11 @@ count(M, [HEAD|TAIL], N) :- HEAD\= M, count(M, TAIL, N).
   ?- count(i, [m,i,u,i], Count).
   % Count = 2
   ```
-- check if the first element of the list is `m`:
+2. To check if the first element of the list is `m`:
   ```prolog
 starts_with_m([m|_]).
   ```
-- check if all elements of a list belong to the set $\\{m, i, u\\}$:
+3. To check if all elements of a list belong to the set $\\{m, i, u\\}$:
     ```prolog
 valid_alphabet([m]).
 valid_alphabet([i]).
@@ -66,8 +67,8 @@ valid_alphabet([H|T]):-
 valid_alphabet(T).
     ```
 
-Here’s the full program:
-
+With the help of the above snippets, we end up with:
+ 
 ```prolog
 % count number of occurrences of an element in a list
 count(_, [], 0).
@@ -253,3 +254,7 @@ muiiu
 ```
 > My program does not check if the theorem passed as parameter is a true theorem. Invalid inputs like `mu` could cause infinite loops.
 {: .prompt-warning }
+
+## References
+
+1. Wikipedia contributors, 2023. MU puzzle. In Wikipedia, The Free Encyclopedia. Available at: https://en.wikipedia.org/w/index.php?title=MU_puzzle&oldid=1185545164 [Accessed on June 30, 2024].
