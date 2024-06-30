@@ -5,6 +5,7 @@ tags :  [the-odin-project]
 description: My experience with the web development foundations course by The Odin Project.
 comments: true
 mermaid: true
+media_subpath: /assets/odin-foundations
 ---
  
 On 19th June 2022, I officially began my web development journey with the help of The Odin Project (TOP), a free open-source course. The course is divided into two sub-courses: a foundations course where you learn the basics of web development and a full-stack course where you learn to become a full-stack web developer. In this post, I will talk about my experience with the foundations course.
@@ -44,7 +45,7 @@ By the end of the foundation course, you will not become a great web developer b
 Here are some topics that I had to learn on my own since they are not taught in the foundations course at the time of this post:
 - **UI/UX design** : The course will not teach you how to create a  website design from scratch or how to choose the correct color palette for your website. You will either have to learn these things on your own or take inspiration from existing websites on the internet.
 - **Responsive design** : This topic is covered only in the later stages of the full stack course so unless you self-learn it, your websites will not look great on different screen sizes.
-- **Search-engine-optimization** : You will not learn how to improve the discoverability of websites on search engines. This will limit internet traffic to your projects.
+- **Search-engine-optimization** : You will not learn how to improve the visibility of your websites on search engines. This will limit internet traffic to your projects.
 - **CSS animations** : This topic is covered only in the full stack course.
 
 I concede that none of the above topics are important for a beginner but some of this knowledge was useful for me when working on projects.
@@ -89,7 +90,7 @@ Here are some factors to consider about me before we dive into more details:
  
 **21-25 July** : I was not satisfied with the previous version and started from scratch again to build a 4th version.
 
-<img src="https://github.com/creme332/my-odin-projects/raw/main/odin-recipes/iterations/iteration6img.png"  height ="300" width ="500" alt = "Image of Rock Paper Scissors project">
+<img src="odin-recipes.png"  height ="300" width ="500" alt = "Image of Rock Paper Scissors project">
 
 #### Landing page project (4 days)
  
@@ -100,18 +101,18 @@ Here are some factors to consider about me before we dive into more details:
  
 **12-19 July** : I had to learn CSS animations from Youtube to build the project. This is by far my favourite project: I really liked the GUI and the animations.
  
-<img src="https://github.com/creme332/my-odin-projects/raw/main/rps-game/gifs/gif1.gif" height ="300" width ="300" alt = "Image of Rock Paper Scissors project">
+<img src="rps.gif" height ="300" width ="300" alt = "Image of Rock Paper Scissors project">
 
 #### Etch-a-sketch project (7 days)
  
 **25-31 July** : I implemented "complex" features like Paint bucket fill, Undo/Redo. This was a fun project to work on.
 
-<img src="https://github.com/creme332/my-odin-projects/raw/main/etch-a-sketch/iterations/iteration1.gif" height ="500" width ="500"  alt = "Image of Etch-a-sketch project">
+<img src="etch-a-sketch.gif" height ="500" width ="500"  alt = "Image of Etch-a-sketch project">
 
 #### Calculator project (3 days)
 **13-15 August** : I did not want to spend too much time on this project but I still wanted to create something totally different from others. I finally settled for a basic version of an abacus.
 
-<img src="https://github.com/creme332/my-odin-projects/raw/main/calculator/assets/img/iterations/abacus.gif" height ="300"  width= "300" alt = "Image of abacus project">
+<img src="abacus.gif" height ="300"  width= "300" alt = "Abacus project">
 
 This project served as inspiration for my [advanced abacus project](https://creme332.github.io/abacusLite/).
  
