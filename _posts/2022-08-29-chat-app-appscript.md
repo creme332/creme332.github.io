@@ -1,8 +1,8 @@
 ---
 title: How to build a real-time chat app with Google Sheets
 categories : [Tutorial]
-tags :  [appscript, javascript]
-description: Learn how to build a live chat application using JavaScript, Google Apps Script, and Google Sheets.
+tags :  [AppScript, javascript]
+description: Learn how to build a real-time chat application using JavaScript, Google Apps Script, and Google Sheets.
 comments: true
 math : true
 media_subpath: /assets/appscript-app/
@@ -25,8 +25,9 @@ _A real-time no-login online chat app at https://creme332.github.io/1bxoxb1/_
  
 ### Create a Google Sheets database
  
-- Go to [Google Sheets ](https://docs.google.com/spreadsheets/u/0/) to create a spreadsheet. The spreadsheet name is not important.
-- Open your spreadsheet and change the first three columns to :
+1. Go to [Google Sheets ](https://docs.google.com/spreadsheets/u/0/) to create a new spreadsheet with a name of your choice.
+
+2. Open your spreadsheet and add three columns names `date`, `username`, and `message` :
  
 | date | username | message |
 | ---- | -------- | ------- |
@@ -34,8 +35,13 @@ _A real-time no-login online chat app at https://creme332.github.io/1bxoxb1/_
 |      |
  
 ### Create AppScript project
--  Go to the [AppScript dashboard](https://script.google.com/) to create and open a new appscript project. The project name is not important.
-- There is currently a single file `Code.gs` in your project. Create 3 new **HTML** files to make your file structure look like this :
+
+Go to the [AppScript dashboard](https://script.google.com/) to create and open a new AppScript project with a name of your choice.
+
+![AppScript dashboard](appscript-dashboard.png)
+
+You will see a single file `Code.gs` in your project. Create 3 new HTML files to make your file structure look like this :
+
 ```
 Files
 │_   Code.gs
@@ -47,7 +53,7 @@ Files
  
 ### Write server-side code
  
->The server-side code is  written in the `Code.gs`{: .filepath } file.
+> All server-side code must be  written in the `Code.gs`{: .filepath } file.
 {: .prompt-info }
  
 #### Add spreadsheet information
@@ -95,7 +101,7 @@ function addNewRowToSheet(username, user_input) {
 ```
 {: file="Code.gs" }
 
->The date must be in string format so that it can be passed to the client later. Read more about legal parameters in appscript [here](https://developers.google.com/apps-script/guides/html/reference/run#myFunction(...)).
+>The date must be in string format so that it can be passed to the client later. Read more about legal parameters in AppScript [here](https://developers.google.com/apps-script/guides/html/reference/run#myFunction(...)).
 {: .prompt-warning }
  
 #### Send spreadsheet to client
@@ -242,12 +248,14 @@ Every `REFRESH_RATE` milliseconds, the following line is executed :
 {: .prompt-tip }
 
 ## Limitations
- 
-### Project
+
+As you may have guessed, using Google Sheets as your "backend" does come with some limitations:
+
 - A maximum of 30 concurrent users is allowed.
 - Google Sheet API allows at most 300 requests per minute.
  
-### AppScript Online IDE
+There are also some drawbacks of using the AppScript Online IDE:
+
 - No version control system like Git.
 - No keyboard shortcuts available like in VSCode.
 - `Rename Symbol` option was not working at the time when I wrote my code.
