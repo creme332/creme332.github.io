@@ -44,7 +44,7 @@ Last year, I took up the challenge to self-learn Cambridge A-level Further Mathe
     <td>Online textbook platform.</td>
   </tr>
   <tr>
-    <td><a href="http://www.uop.edu.pk/ocontents/Multivariable%20Calculus%207th%20Edition%20By%20James%20Stewart.pdf" rel="nofollow">Multivariable Calculus By James Stewart</a></td>
+    <td><a href="//www.uop.edu.pk/ocontents/Multivariable%20Calculus%207th%20Edition%20By%20James%20Stewart.pdf" rel="nofollow">Multivariable Calculus By James Stewart</a></td>
     <td>Not catered for A-level syllabus but some chapters (Polar coordinates, vectors, differential equations) are worth a read.</td>
   </tr>
 </table>
