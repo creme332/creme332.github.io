@@ -5,7 +5,7 @@ tags :  [c++, jupyter-notebook, wsl2, jupyter-notebook]
 description: Learn how to install C++ on Jupyter Notebook within VSCode in a WSL2 environment.
 comments: true
 mermaid: true
-img_path: /assets/cpp-notebook/
+media_subpath: /assets/cpp-notebook/
 ---
 
 In this tutorial, I will guide you through the process of starting your C++ journey on Jupyter Notebook. By the end, you will effortlessly run C++ notebooks, seamlessly switching between VS Code and your browser for a smooth coding experience. Let's dive in!
