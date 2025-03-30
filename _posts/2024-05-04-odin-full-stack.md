@@ -1,5 +1,5 @@
 ---
-title: My experience with The Odin Project Full Stack JavaScript path 
+title: My Experience With the Odin Project Full Stack JavaScript Path
 categories : [Learning Journey]
 tags :  [the-odin-project]
 description: My experience experience with the full stack JavaScript web development course by The Odin Project.

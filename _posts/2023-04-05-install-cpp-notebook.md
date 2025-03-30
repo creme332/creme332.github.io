@@ -1,5 +1,5 @@
 ---
-title: How to setup Jupyter Notebook for C++ in VS Code
+title: How To Set Up Jupyter Notebook for C++ in VS Code
 categories : [Tutorial]
 tags :  [c++, jupyter-notebook, wsl2, jupyter-notebook]
 description: Learn how to install C++ on Jupyter Notebook within VSCode in a WSL2 environment.

@@ -1,5 +1,5 @@
 ---
-title: My experience with The Odin Project foundations course
+title: My Experience With the Odin Project Foundations Course
 categories : [Learning Journey]
 tags :  [the-odin-project]
 description: My experience with the web development foundations course by The Odin Project.

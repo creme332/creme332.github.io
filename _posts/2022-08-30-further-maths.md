@@ -1,5 +1,5 @@
 ---
-title: Resources to self-learn A-level Further Mathematics
+title: Resources To Self-Learn A-Level Further Mathematics
 categories : [Learning Resources]
 tags :  [a-level, notion, maths]
 Comment: Discover a comprehensive collection of top-tier free resources designed for self-learning A-level Further Mathematics.

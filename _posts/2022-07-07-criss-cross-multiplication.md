@@ -1,5 +1,5 @@
 ---
-title: A deep dive into the criss-cross multiplication algorithm
+title: A Deep Dive Into the Criss-Cross Multiplication Algorithm
 categories : [Algorithms]
 tags :  [multiplication-algorithm, maths, c++]
 description: A concise explanation of the criss-cross multiplication algorithm and its implementation in C++.

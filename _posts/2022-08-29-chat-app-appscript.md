@@ -1,5 +1,5 @@
 ---
-title: How to build a real-time chat app with Google Sheets
+title: How To Build a Real-Time Chat App With Google Sheets
 categories : [Tutorial]
 tags :  [AppScript, javascript]
 description: Learn how to build a real-time chat application using JavaScript, Google Apps Script, and Google Sheets.
