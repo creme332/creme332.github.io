@@ -8,9 +8,10 @@ mermaid: true
 media_subpath: /assets/cpp-notebook/
 ---
 
-In this tutorial, I will guide you through the process of starting your C++ journey on Jupyter Notebook. By the end, you will effortlessly run C++ notebooks, seamlessly switching between VS Code and your browser for a smooth coding experience. Let's dive in!
+In this tutorial, I will guide you through the process of starting your C++ journey on Jupyter Notebook. 
 
 The whole process is summarized below:
+
 ```mermaid
 flowchart TD
     mf(Mambaforge)
@@ -26,12 +27,15 @@ flowchart TD
     vs -. runs .->jp
     jp-. uses .-> xc
 ```
+
 ## Prerequisites
+
 - WSL or Linux. (I will be using WSL 2 running Ubuntu)
 - VS Code
 - wget
 
 ## Why mambaforge
+
 > Mambaforge is a cross-platform package manager. It uses the `mamba`  package manager.
 {: .prompt-tip }
 
@@ -140,6 +144,7 @@ mamba install jupyterlab -c conda-forge
 {: .prompt-tip }
 
 ## Run notebook in VS Code
+
 Install the Jupyter extension pack and enable it in the Remote Extension Host. The pack should contain the following extensions:
 - Jupyter by Microsoft
 - Jupyter Keymap by Microsoft
