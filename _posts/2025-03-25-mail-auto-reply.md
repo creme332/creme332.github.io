@@ -152,22 +152,69 @@ The list of auto-replied senders is stored in the `.dovecot.lda-dupes` file in t
 
 ## Troubleshooting
 
-Check if Dovecot and Postfix are active and running:
-
-```bash
-systemctl status dovecot postfix
-```
-
 Check if your Postfix configurations have no errors:
 
 ```bash
 postfix check
 ```
 
+If there are no errors, you should not see any output.
+
+Restart Dovecot and Postfix:
+
+```bash
+systemctl restart dovecot postfix
+```
+
 Assuming you have `rsyslog` installed, check your mail logs for error messages related to sieve:
 
 ```bash
-cat /var/log/maillog
+cat /var/log/maillog | grep sieve
 ```
 
-Finally, try deleting the list of auto-replied senders in `/home/<user>/.dovecot.lda-dupes`.
+If you do not have `rsyslog`, install it using `yum install -y rsyslog` and send emails again before verifying the logs.
+
+### Reset list of auto-replied senders
+
+If `tom@csft.mu` is not receiving auto-replies from another user who has vacation activated, delete `/home/tom/.dovecot.lda-dupes`.
+
+### Check account name
+
+Some account names (e.g. `root`, `support`) are restricted and consequently emails are redirected to another user. 
+
+Check if there is an alias redirecting your mail account (e.g. `support`):
+
+```bash
+grep support /etc/aliases
+```
+
+If you see something like:
+
+```
+support:        postmaster
+```
+
+That means emails sent to `support@csft.mu` are redirected. In this case you can try modifying `/etc/aliases` and then run:
+
+```bash
+newaliases
+systemctl restart postfix dovecot
+```
+
+### Check domain name
+
+The domain name of your mail server may not match the domain name of the email address. In this case you will get a warning in `/var/log/maillog` telling you that the the original envelope recipient address is unparsable.
+
+Check the domain name of your server using:
+
+```bash
+hostname -d
+```
+
+If you are sending emails to `<user>@csft.mu`, the domain name of your server should be `csft.mu`.
+
+To update the fully-qualified name of your server:
+
+```bash
+hostnamectl set-hostname mail.csft.mu
+```
