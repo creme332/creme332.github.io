@@ -19,7 +19,7 @@ title: creme's blog # the main title
 tagline: Tech adventures and side project chronicles # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  Enter the realm of creme332's blog, a digital sanctuary exploring programming, mathematics, and various captivating topics.
+  Explore creme332's blog for insights on programming, mathematics, and a range of related topics.
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -28,8 +28,8 @@ url: "https://creme332.github.io"
 github:
   username: creme332 # change to your github username
 
-twitter:
-  username: twitter_username # change to your twitter username
+#twitter:
+  #username: twitter_username # change to your twitter username
 
 social:
   # Change to your full name.
@@ -38,7 +38,7 @@ social:
   email: c34560814@gmail.com  # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your twitter homepage
+    #- https://twitter.com/username # change to your twitter homepage
     - https://github.com/creme332 # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
