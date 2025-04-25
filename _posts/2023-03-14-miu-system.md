@@ -1,6 +1,6 @@
 ---
 title: Solving the MIU Puzzle With Programming
-categories : [Puzzle Solving]
+categories : [Algorithms]
 tags :  [prolog, python, maths, miu-puzzle]
 description: A solution to the MIU puzzle by Douglas Hofstadter using Prolog and Python.
 comments: true
