@@ -1,12 +1,12 @@
 ---
-title: How to Run Google Lighthouse in WSL2
+title: How to Run Google Lighthouse via CLI in WSL2
 categories : [Tutorial]
 tags :  [wsl2,lighthouse,javascript,linux]
-description: Learn how to run Google Lighthouse inside WSL2 on Windows, including setup steps and Chrome installation.
+description: Learn how to run Google Lighthouse from the command line inside WSL2 on Windows and using it programmatically.
 comments: true
 ---
 
-Lighthouse is a performance auditing tool for websites. If you try to use the Lighthouse library (version 12.6.0 or before) with the Node CLI or programmatically on WSL2, you will observe a similar error:
+Lighthouse is a performance auditing tool for websites. If you try to use the Lighthouse library (version 12.6.0 or before) with the Node CLI or programmatically on WSL2, you might observe a similar error:
 
 ```
 Failed to launch Chrome: Error: connect ECONNREFUSED 127.0.0.1:34729
@@ -93,7 +93,33 @@ You do not need to install Chrome in this case. Puppeteer installs and uses its 
 
 ### Usage
 
-Here is a minimal example that shows how to run Lighthouse:
+In the following script, Puppeteer launches the browser while Lighthouse opens the URL:
+
+```js
+import lighthouse from "lighthouse";
+import puppeteer from "puppeteer";
+
+async function start(url) {
+  try {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+
+    const runnerResult = await lighthouse(url, undefined, undefined, page);
+    const score = runnerResult.lhr.categories.performance.score * 100;
+    console.log("Performance score = ", score);
+
+    await browser.close();
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+await start("https://creme332.github.io/");
+```
+
+It might also be possible to launch Chrome with Lighthouse and handoff to Puppeteer as shown in the documentation (Lighthouse, 2024).
+
+Another method that works on WSL2 is to specify the remote debugging port:
 
 ```js
 import lighthouse from "lighthouse";
@@ -122,18 +148,18 @@ async function start(url) {
 await start("https://creme332.github.io/");
 ```
 
-If you want to use your own Chrome browser instead the Chrome For Testing one, you need to determine the path to your Chrome executable using `which google-chrome` and modify the puppeteer script as follows:
+If you want to use your own Chrome browser instead the Chrome For Testing one, you need to determine the path to your Chrome executable using `which google-chrome` and then modify the options passed to Puppeteer:
 
 ```diff
 const browser = await puppeteer.launch({
 +    executablePath: "/usr/bin/google-chrome", // add your path here
-    args: ["--remote-debugging-port=9222"],
 });
 ```
 
 ## References
 
 1. thasmo, 2021. How to use lighthouse CLI via WSL2? [online]. Github. Available at: [https://github.com/GoogleChrome/lighthouse/discussions/12752](https://github.com/GoogleChrome/lighthouse/discussions/12752) [Accessed 13 May 2025].
-2. Spence, S., 2021. Use Google Chrome in Ubuntu on Windows Subsystem Linux [online]. Available at: [https://www.scottspence.com/posts/use-chrome-in-ubuntu-wsl](https://www.scottspence.com/posts/use-chrome-in-ubuntu-wsl) [Accessed 13 May 2025].
-3. Google Chrome, 2025. lighthouse [online]. Github. Available at: [https://github.com/GoogleChrome/lighthouse](https://github.com/GoogleChrome/lighthouse) [Accessed 13 May 2025].
-4. Bynens, M., 2023. Chrome for Testing: reliable downloads for browser automation [online]. Available at: [https://developer.chrome.com/blog/chrome-for-testing](https://developer.chrome.com/blog/chrome-for-testing) [Accessed 13 May 2025].
+2. Lighthouse, 2024.  Using Puppeteer with Lighthouse [online]. Github. Available at: [https://github.com/GoogleChrome/lighthouse/blob/main/docs/puppeteer.md](https://github.com/GoogleChrome/lighthouse/blob/main/docs/puppeteer.md).
+3. Spence, S., 2021. Use Google Chrome in Ubuntu on Windows Subsystem Linux [online]. Available at: [https://www.scottspence.com/posts/use-chrome-in-ubuntu-wsl](https://www.scottspence.com/posts/use-chrome-in-ubuntu-wsl) [Accessed 13 May 2025].
+4. Google Chrome, 2025. lighthouse [online]. Github. Available at: [https://github.com/GoogleChrome/lighthouse](https://github.com/GoogleChrome/lighthouse) [Accessed 13 May 2025].
+5. Bynens, M., 2023. Chrome for Testing: reliable downloads for browser automation [online]. Available at: [https://developer.chrome.com/blog/chrome-for-testing](https://developer.chrome.com/blog/chrome-for-testing) [Accessed 13 May 2025].
