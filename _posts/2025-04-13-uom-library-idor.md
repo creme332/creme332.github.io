@@ -78,37 +78,53 @@ https://library.uom.ac.mu/dissertations/<DEPT>/<DEGREE>/<YEAR>-<NAME>/files/page
 | `PAGE_NO`   | Page number (counting from 1)                             | 1, 2, 3, …              |
 
 
-The next question that arises is how to determine these parameters if we have a record number but no login access.
-We cannot use the "Click here for full document" option on a record page and extract the URL from the source code since we will be redirected to the login page.
+The next question that arises is how to determine these parameters from a record number but no login access.
+We cannot use the `Click here for full document` option on a record page and extract the URL from the source code since we will be redirected to the login page. 
+The solution is to use the export feature available for a dissertation to obtain its bibliographic details.
 
 <img src="catalogue.png" height ="446" width="702" alt = "Catalogue information of a dissertation">
 
 ### MARC Format
 
-**MARC** (**MAchine-Readable Cataloging**) is a standard set of digital for the machine-readable description of items catalogued by libraries, such as books, DVDs, and digital resources (Wikipedia contributors, 2024). The e-library fortunately allows the **general public** to export bibliographic information of any dissertation in multiple formats including MARC format. 
+**MARC** (**MAchine-Readable Cataloging**) is a standard set of digital for the machine-readable description of items catalogued by libraries, such as books, DVDs, and digital resources (Wikipedia Contributors, 2024). The e-library fortunately allows the **general public** to export bibliographic information of any dissertation in multiple formats including MARC format. 
 
-There are two ways to download the MARC file of a dissertation both without login:
+There are three ways to download the MARC file of a dissertation both without login:
 
-1. By making a GET request to the following URL, where `selected` is set to the record number and `token` is set to a random number:
+1. By making a GET request to the following endpoint, where `selected` is set to the record number and `token` is set to a random number:
     
     ```
     https://library.uom.ac.mu/libero/User.WebOpac.Catalogue.RecordDownload.cls?set=1&selected=<RECORD_NO>&what=this&format=marc&subjects=0&tags=&to=file&emailaddress=&token=<RANDOM_NUMBER>
     ```
-    
-2. By clicking on the "Download Title" button (located beside the "Reserve Title" button) on the record page.  This method is equivalent to the first one.
 
-An example of a MARC file downloaded from the e-library is as follows:
+    For example, to download the MARC file of the record `10239364`, the following Bash command can be executed:
+    
+    ```bash
+    curl --output marc.txt https://library.uom.ac.mu/libero/User.WebOpac.Catalogue.RecordDownload.cls\?set\=1\&selected\=10239364\&what\=this\&format\=marc\&subjects\=0\&tags\=\&to\=file\&emailaddress\=\&token\=1
+    ```
+    
+2. On the dissertation page, we can click on the `Download Title` button (located beside the `Reserve Title` button). This button click has the same effect as the first method.
+3. On the results page, we can select a dissertation (by clicking on the checkbox next to it) and then clicking on the `Download All` button found at the bottom of the page.
+    <img src="download-marc.gif" height ="446" width="702" alt = "MARC file for a dissertation">
+    _Steps for downloading the MARC file of a dissertation_
 
 <img src="marc.png" height ="446" width="702" alt = "MARC file for a dissertation">
-_MARC file for a dissertation_
+_Contents of a sample MARC file for a dissertation_
 
-Each entry has a meaning. For example the first entry with ID `001-1-00-$` represents the record number. 
+Each entry has a meaning. For example the first entry with ID `001-1-00-$` represents the record number. We can map each entry to the parameter that we need:
 
-The most important entry is the last one called `997-1-00-$u`. This represents the absolute path to the dissertation on the library’s server. This entry contains all the required information to construct the unprotected URL formats!
+| Parameter   | Entry ID for derivation |
+| ----------- | ----------------------- |
+| `RECORD_NO` | `001-1-00-$`            |
+| `DEPT`      | `710-1-00-$a`           |
+| `DEGREE`    | `710-2-00-$a`           |
+| `YEAR`      | `260-1-00-$c`           |
+| `NAME`      | `100-1-00-$a`           |
+
+However, we can skip all this derivation and use last entry `997-1-00-$u`. This represents the absolute path to the dissertation on the library’s server. It contains all the required information to construct the unprotected URL formats!
 
 ## Proof of Concept
 
-To confirm the existence of the vulnerability beyond doubt, I implemented a bash script that automates the downloading of a dissertation given its record number. The script does not login to the library and accesses it as a guest. However, since the issue has not yet been patched, I've chosen not to share the script publicly to avoid potential misuse.
+To confirm the existence of the vulnerability beyond doubt, I implemented a [bash script that automates the downloading of a dissertation given its record number](https://github.com/creme332/libero2pdf). The script does not login to the library and accesses it as a guest.
 
 The pseudocode is as follows:
 
@@ -138,9 +154,9 @@ The library user guide states that (UOM, 2018):
 
 ## Reporting & Mitigation Suggestions
 
-I've emailed the university on two separate occasions regarding the vulnerability but received no response. Three months after my initial email, the only noticeable change was the removal of the "Download Title" button on the dissertation’s record page. This appeared to be a quick fix aimed at hiding the absolute server path to the dissertation. Unfortunately, this is insufficient because:
+I've emailed the university on two separate occasions regarding the vulnerability but received no response even though my email was forwarded to the Management Information System (MIS) team. Three months after my initial email, the only noticeable change was the removal of the `Download Title` button on the dissertation’s record page. This appeared to be a quick fix aimed at hiding the absolute server path to the dissertation. Unfortunately, this is insufficient because:
 
-- Security through obscurity is not a viable solution. Even without access to the MARC format, the parameters in the unprotected URLs can still be determined from the record page — it just takes more effort.
+- Even without access to the MARC format, the parameters in the unprotected URLs can still be determined from the record page — it just takes more effort.
 - The URL for downloading the bibliographic information in MARC format still works.
 - The URLs for each page of a dissertation remain unprotected.
 
@@ -149,5 +165,5 @@ A better solution to this vulnerability is to check whether a request to the unp
 ## References
 
 1. Cheat Sheets Series Team, 2025. Insecure Direct Object Reference Prevention Cheat Sheet [online]. Available at: [https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html) [Accessed 13 April 2025].
-2. Wikipedia contributors, 2024. MARC standards. Wikipedia, The Free Encyclopedia. Available at: [https://en.wikipedia.org/w/index.php?title=MARC_standards&oldid=1214958905](https://en.wikipedia.org/w/index.php?title=MARC_standards&oldid=1214958905) [Accessed 13 April 2025].
+2. Wikipedia Contributors, 2024. MARC standards. Wikipedia, The Free Encyclopedia. Available at: [https://en.wikipedia.org/w/index.php?title=MARC_standards&oldid=1214958905](https://en.wikipedia.org/w/index.php?title=MARC_standards&oldid=1214958905) [Accessed 13 April 2025].
 3. UOM, 2018. User Guide [online]. University of Mauritius Library. Available at: [https://library.uom.ac.mu/elib/userGuide5.pdf](https://library.uom.ac.mu/elib/userGuide5.pdf) [Accessed 13 April 2025].
