@@ -2,12 +2,12 @@
 title: Using Anki to Study Computer Science
 categories : [Learning Journey]
 tags: [anki, computer science, spaced repetition, learning systems, self-study]
-description: Reflections and practical lessons from using Anki to study computer science.
+description: Reflections from using Anki to study computer science.
 comments: true
 media_subpath: /assets/anki/
 ---
 
-[Anki](https://apps.ankiweb.net/) is an open-source flashcard app that uses spaced repetition. The idea behind spaced repetition is to space out your revision so that you revise just before you are about to forget, so as to combat the forgetting curve. Anki simplifies the process by determining what cards to show or hide at a given point in time using a spaced repetition algorithm. It is commonly used for learning new foreign languages and by students studying medicine. For a better overview of Anki and spaced repetition, I recommend reading this page from the Anki manual: [https://docs.ankiweb.net/background.html](https://docs.ankiweb.net/background.html).
+[Anki](https://apps.ankiweb.net/) is an open-source flashcard app that uses spaced repetition. The idea behind spaced repetition is to space out your revision so that you revise just before you are about to forget. Anki simplifies the process by determining what cards to show or hide at a given point in time using a spaced repetition algorithm. It is commonly used for learning new foreign languages and by students studying medicine. For a better overview of Anki and spaced repetition, I recommend reading this page from the Anki manual: [https://docs.ankiweb.net/background.html](https://docs.ankiweb.net/background.html).
 
 I've used Anki for several years to study for both my A-levels and my bachelor's degree in Computer Science (CS). In the process, I achieved a 4.0 GPA without cramming. In this post, I document my Anki workflow and the things that I have learnt after six years of using Anki. This is not a tutorial on Anki or on studying computer science. While the post focuses mainly on Anki, many of the tips shared are transferable to other flashcard apps.
 
@@ -51,8 +51,8 @@ Flashcards can also be used for learning a diagram. It can help you precisely re
 In my experience, modules that involve a lot of calculations or logic (e.g. Computational Maths, Formal Logic) can be studied effectively with flashcards. In this case, you need to create flashcards that test your understanding of:
 
 - **Theory/Concepts**
-- **Formulas**: Create cards that checks if you remember the formula or even the meaning of each term in a formula. 
-- **Proofs/Algorithms**: Rather than trying to learn an entire algorithm in a single flashcards, prefer smaller flashcards where you can learn different parts of an algorithm. The `Cloze` note type is essential for hiding intermediate steps of calculations in example-based questions.
+- **Formulas**: Create cards that check if you remember the formula or even the meaning of each term in a formula. 
+- **Proofs/Algorithms**: Rather than trying to learn an entire algorithm in a single flashcard, prefer smaller flashcards where you can learn different parts of an algorithm. The `Cloze` note type is essential for hiding intermediate steps of calculations in example-based questions.
  
 > Anki supports both MathJax and LaTeX which allows you to create well-formatted equations in Anki itself. See the manual for more details: [https://docs.ankiweb.net/math.html](https://docs.ankiweb.net/math.html).
 {: .prompt-tip}
@@ -92,7 +92,7 @@ The note types that I used for learning programming are `Image Occlusion`, `Cloz
 > Use the [`Syntax Highlighting for Code`](https://ankiweb.net/shared/info/1463041493) add-on to paste code snippets in your flashcards while maintaining syntax highlighting and formatting.
 {: .prompt-tip}
 
-> Flashcards are NOT a substitute to actual programming (writing code, compiling, debugging, …). They will not make you better at programming and therefore, you should still work on your programming skills separately by actually programming. 
+> Flashcards are NOT a substitute for actual programming (writing code, compiling, debugging, …). They will not make you better at programming and therefore, you should still work on your programming skills separately by actually programming. 
 {: .prompt-warning }
 
 <img src="prog-cards/dst.png" height ="446" width="702" alt = "Anki card on SR flip flop">
@@ -109,7 +109,7 @@ The note types that I used for learning programming are `Image Occlusion`, `Cloz
 
 ### Linux
 
-To learn Linux commands, I relied on the `Basic (type in the answer)` note type. It allows you to type your answer, and when you reveal the card, Anki shows a diff between your input and the true answer.
+To learn Linux commands, I relied on the `Basic (type in the answer)` note type. It allows you to type your answer, and when you reveal the card, Anki shows the difference (diff style) between your input and the true answer.
 
 Another useful note type for learning commands is the `Basic (and reversed card)` where both the front and the back of the card become separate cards. The idea here is that you can test if you can remember the command given an explanation and vice-versa.
 
@@ -146,11 +146,11 @@ There is an enormous amount of good advice on the internet for creating good fla
 4. Use **simple language**. Avoid fancy English words.
 5. Flashcards do not need to be perfect on the first attempt. With time, you can make small improvements.
 6. **Create your own flashcards** as far as possible instead of downloading random decks from the internet. Creating and editing cards is part of the learning process, since you need to be able to understand something first to be able to create a card for it. Moreover, it is highly unlikely that online decks are catered to your understanding or your teacher's syllabus.
-7. Avoid cards that require difficult mental calculations or that assume that you have pen, paper, or calculator available.
+7. Avoid cards that require difficult mental calculations or that assume that you have a pen, paper, or calculator available.
 
 ## Use of AI
 
-The advent of AI has revolutionized the flashcard generation process. I've used AI extensively to summarize lengthy lecture notes or to generate flashcards.
+The advent of AI has revolutionized the flashcard generation process. I've used AI extensively to summarize lengthy lecture notes and to generate flashcards.
 
 However, you should be careful when uploading PDFs of lectures to AI models because the PDF can contain text in image format or diagrams in PNG format which the AI cannot parse. Therefore, the AI can miss certain content or even entire slides. Forgetting to revise parts of the lecture can have serious consequences.
 
