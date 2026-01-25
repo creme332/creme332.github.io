@@ -58,7 +58,7 @@ There also exist production-ready tools for archiving websites. Examples include
 I avoided these tools because:
 
 1. They store websites in formats (e.g., WARC) that make programmatic editing difficult. The archived versions are not designed to be modified.
-2. They are written in languages (Go, Elixir, Java) that are not web-oriented. I wanted to use JavaScript or TypeScript because the NPM ecosystem is geared toward web development and contains libraries for DOM manipulation.
+2. They are written in languages (Go, Elixir, Java) that are not web-oriented. I chose JavaScript or TypeScript because the NPM ecosystem is geared toward web development and provides libraries for DOM manipulation.
 3. They are too complex for my use case. If I encountered an issue (for example, if a tool failed on a particular website), it would be difficult to find a solution because the codebases are large and complex. Writing my own tool made it easier to modify the source code and integrate new changes.
 
 ### MHTML
@@ -165,7 +165,7 @@ When saving an asset, we need a way to map the asset URL to a filesystem path. T
 /**
  * Generates a unique file name for an asset. It is important to hash the asset URL as it may contain query parameters.
  * @param {URL} assetUrl Download link of asset. It can contain query parameters.
- * @param {string | undefined} ext File extension of asset. If undefined, it will be automatically determined from URL but is not guaranteed to be correct.
+ * @param {string | undefined} ext File extension of asset. If undefined, it will be automatically determined from the URL but is not guaranteed to be correct.
  * @returns Path to asset relative to index.html of webpage
  */
 export function getAssetFileName(
@@ -411,4 +411,4 @@ await page.evaluate(() => {
 - Pages behind login walls or requiring session-specific cookies are not fully supported.
 - There is no isolation between mirrored sites or pages beyond directory separation. Reference:
 [https://github.com/ArchiveBox/ArchiveBox/issues/239](https://github.com/ArchiveBox/ArchiveBox/issues/239)
-- Some websites (e.g., [react.dev](https://react.dev)) modifies my rewritten URLs back to their original values during rehydration.
+- Some websites (e.g., [react.dev](https://react.dev)) modify my rewritten URLs back to their original values during rehydration.
