@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-I'm creme332, a computer science graduate student from Mauritius. This blog is a digital diary where I share my experiences and document my thoughts while working on projects. What drives me is the constant evolution and innovation happening every day in this field, and I enjoy exploring new ways to apply my skills.
+I'm creme332, a recent computer science graduate from Mauritius, now working as a full-stack developer. This blog is a digital diary where I share my experiences and document my thoughts while working on projects. What drives me is the constant evolution and innovation happening every day in this field, and I enjoy exploring new ways to apply my skills.
 
 Feel free to reach out to me at c34560814 [at] gmail [dot] com if you have any queries.
 
