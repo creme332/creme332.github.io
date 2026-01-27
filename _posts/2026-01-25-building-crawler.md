@@ -232,6 +232,8 @@ const isLikelyJSApp = await page.evaluate(() => {
 ```
 {% endraw %}
 
+The numbers 100 and 500 are magic numbers and should not be taken too literally. These thresholds worked well in my case.
+
 ### Rewriting URLs
 
 To ensure that all URLs are relative (rather than absolute or root-relative), I first defined an array of HTML elements with URL-bearing attributes:
@@ -252,7 +254,7 @@ const assetElements = [
 ];
 ```
 
-Then, I parsed the HTML using Cheerio, rewriting the URLs by first resolving them relative to the page URL.
+Then, I parsed the HTML using [Cheerio](https://www.npmjs.com/package/cheerio), rewriting the URLs by first resolving them relative to the page URL.
 
 Sample cases for assets in `https://www.example.com/index.html`:
 
@@ -262,9 +264,6 @@ Sample cases for assets in `https://www.example.com/index.html`:
 | `/cat.png`                     | `assets/png/cat.png`  |
 | `//cat.png`                    | `assets/png/cat.png`  |
 | `https://www.abc.com/ping.jpg` | `assets/jpg/ping.jpg` |
-
-> Complete table
-{prompt-warning}
 
 ```js
 // Process each asset URL in the HTML tags
