@@ -25,8 +25,8 @@
 #
 
 - type: personal-website
-  icon: 'fas fa-globe'
-  url:  'https://creme332.vercel.app/'
+  icon: 'fas fa-file-alt'
+  url:  'https://kelv1n.web.app/'
 
 # - type: stack-overflow
 #   icon: 'fab fa-stack-overflow'
