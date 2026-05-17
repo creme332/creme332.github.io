@@ -12,7 +12,7 @@ In this post, I reflect on the things that my three-year degree in computer scie
 
 One of the most important concepts that was not taught was version control. Version control is a way of tracking changes made to files. It allows you to "go back in time", keep parallel versions of the same file, and much more. It helps avoid situations where you create files like "file1.txt", "file1-edit.txt", and "file1-final-final.txt". The most common tool for version control is Git.
 
-I first learnt about Git while self-learning through The Odin Project in my first year of university. Ever since, I have used it for all my assignments and projects. I also pushed my Git repositories to GitHub to have a cloud backup.
+I first learnt about Git while self-learning through The Odin Project before I joined university. Ever since, I have used it for all my assignments and projects. I also pushed my Git repositories to GitHub to have a cloud backup.
 
 I highly recommend using Git and GitHub for your assignments, especially when writing your dissertation.
 
@@ -46,7 +46,7 @@ I had to learn the following by myself:
 
 Touch typing is the skill of typing with both hands without looking at the keyboard. It is a skill that is rarely taught but can severely limit the productivity of CS students if neglected. For example, slow typing speeds mean that you have less time, or sometimes no time, to debug your code during lab practical tests. Moreover, it also means that you are slower at taking notes. If you are going to spend most of your life in front of a screen, it is essential to invest some time into achieving a good typing speed.
 
-I recommend using online typing tests like Monkeytype to reach a decent typing speed of at least 50 WPM. In my case, I started touch typing back in high school and practiced on various platforms like TypeRacer, 10FastFingers, and Keybr. I can now achieve average speeds of 80 WPM on normal text with capitalization, numbers, and punctuation. A major advantage of touch typing is being able to rapidly digitize and back up all my notes instead of keeping handwritten ones.
+I recommend using online typing tests like [MonkeyType](https://monkeytype.com/) to reach a typing speed of at least 50 WPM. In my case, I started touch typing back in high school and practiced on various platforms like [TypeRacer](https://play.typeracer.com/), [10FastFingers](https://10fastfingers.com/typing-test), and Keybr. I can now achieve average speeds of [80 WPM](https://monkeytype.com/profile/creme69) on normal text with capitalization, numbers, and punctuation. A major advantage of touch typing is being able to rapidly digitize and back up all my notes instead of keeping handwritten ones.
 
 ## Academic Tooling
 
