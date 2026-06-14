@@ -24,10 +24,6 @@
 #   url:  ''                  # Fill with your Linkedin homepage
 #
 
-- type: personal-website
-  icon: 'fas fa-file-alt'
-  url:  'https://kelv1n.web.app/'
-
 # - type: stack-overflow
 #   icon: 'fab fa-stack-overflow'
 #   url:  'https://stackoverflow.com/users/17627866/creme332'                  # Fill with your stackoverflow homepage
